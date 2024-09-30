@@ -1,5 +1,6 @@
 :root {
     --brand-color: #2196F3;
+    --brand-color-gray: #AFB1B8
 }
 
 *,
@@ -184,7 +185,7 @@ letter-spacing: 0.28px;
 
 /* about section */
 .about-section{
-    padding-top: 90px;
+    padding: 90px 0;
 }
 .about-title{
 text-align: center;
@@ -225,14 +226,93 @@ margin-top: 50px;
 
 /* section Team */
 .team-section{
-
+background-color: gray;
 }
 .team-title{
+text-align: center;
 
 }
 .team-list{
+    display: flex;
+    margin-top: 50px;
 
 }
 .team-item{
+width: 270px;
 
 }
+.team-item img{
+width: 100%;
+}
+.team-item_title{
+    margin-top: 30px;
+}
+.team-item_text{
+    color: ;
+    text-align: ;
+    font-size: ;
+    font-weight: ;
+
+    margin-top: 10px;
+}
+.social-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+
+}
+.social-item{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: 
+}
+.social-item_icon{
+width: 22px;
+height: 22px;
+fill: #AFB1B8;
+}
+.social-link:hover{
+background-color: gray;
+border-radius: 50%;
+}
+.social-link:hover.social-item_icon{
+    fill: green;
+}
+
+
+/* section Clients */
+.clients-section{
+    padding: 90px 0;
+}
+.clients-title{
+    text-align: ;
+    font-size: ;
+    font-weight: ;
+
+}
+.clients-list{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.clients-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border-radius: 4px;
+    bottom: 1px solid #AFB1B8;
+}
+.clients-item__link{
+
+}
+.clients-item:hover{
+    background-color: var(--brand-color-gray);
+}
+
+/* --section-footer-- */
+
