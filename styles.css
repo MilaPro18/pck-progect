@@ -1,7 +1,7 @@
 :root {
     --brand-color: #2196F3;
-    --brand-color-gray: #AFB1B8
-    --brand-color-font: #757575
+    --brand-color-gray: #AFB1B8;
+    --brand-color-font: #757575;
 }
 
 *,
@@ -12,9 +12,12 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    color: #757575;
+    color: var(--brand-color-font);
 }
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
     color: #212121;
     margin: 0;
 }
@@ -22,6 +25,7 @@ h1,h2,h3,h4 {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 a {
@@ -30,10 +34,20 @@ a {
 }
 
 .container {
-    width: 1200px;
+    width: 100%;
     padding: 0 15px;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (min-width: 480px) {
+        width: 480px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 768px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
+    
 }
 
 /* header */
@@ -47,8 +61,21 @@ header{
     display: flex;
     align-items: center;
 }
+.header-wrager img{
+    width: 134px;
+    @media screen and (min-width: 1200px) {
+        width: 145px;
+    }
+}
 .header-nav{
-    margin-left: 90px;
+   display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+        margin-left: 85px;
+    }
+    @media screen and (min-width: 1200px) {
+        margin-left: 90px;
+    }
 }
 .nav-list{
     display: flex;
@@ -74,21 +101,47 @@ padding: 10px 0;
 }
 .header-adress{
     margin-left: auto;
+    display: none;
+    @media screen and(min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+    @media screen and(min-width: 1200px) {
+        flex-direction: row;
+    }
 }
 .adress-link{
-display:inline-block;
-color: #757575;
+    display: inline-block;
+color: var(--brand-color-font)
 font-family: Roboto;
 font-size: 14px;
 font-weight: 500;
 line-height: normal;
 letter-spacing: 0.28px;
 }
-.adress-link tel{
-    margin-left: 50px;
+.adress-link.tel{
+    margin-left:0;
+    @media screen and(min-width: 1200px) {
+        flex-direction: row;
+}
 }
 .adress-link:hover{
     color:var(--brand-color);
+}
+.mobile-btn{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #FFF;
+    margin-left: auto;
+    @media screen and(min-width: 768px){
+    display: none;
+    }
+
+}
+.mobile-btn_icon{
+    width: 100%;
+    height: 100%;
 }
 
 /* hero-section */
@@ -107,22 +160,39 @@ letter-spacing: 0.28px;
     justify-content: center;
     margin: 0 auto;
     align-items: center;
+    @media screen and(min-width: 480px){
+      
+        }
+        @media screen and(min-width: 768px){
+            
+            }
+            @media screen and(min-width: 1200px){
+                
+                }
+    
 }
 .hero-title{
     color: #fff;
-    font-size: 44px;
+    font-size: 26px;
     font-weight: 900;
     line-height: 60px; /* 136.364% */
-    letter-spacing: 2.64px;
     text-transform: uppercase;
     max-width: 700px;
     text-align: center;
+    @media screen and(min-width: 480px){
+       max-width: 360px;      
+    }
+    @media screen and(min-width: 1200px){
+        font-size: 44px;
+        min-width: 700px;
+        letter-spacing: 2.64px;        
+    }
 }
 .hero-btn{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 32px;
+    padding: 10px 24px;
     color: #FFF;
    font-family: Roboto;
     font-size: 16px;
@@ -134,6 +204,9 @@ letter-spacing: 0.28px;
    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);  
    margin-top: 30px;
    border: none;
+   @media screen and(min-width: 1200px){
+    padding: 10px 32px;
+   }
 }
 
 /* Benefits section */
@@ -147,7 +220,13 @@ letter-spacing: 0.28px;
 
 .benefits-list {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
+    @media screen() {
+        
+    }
 }
 
 .benefits-items {
@@ -162,6 +241,9 @@ letter-spacing: 0.28px;
     background-color: #F5F4FA;
     height: 120px;
     width: 100%;
+    @media screen() {
+        
+    }
 }
 
 .benefits-item_title {
@@ -187,6 +269,9 @@ letter-spacing: 0.28px;
 /* about section */
 .about-section{
     padding: 90px 0;
+    @media screen and() {
+        
+    }
 }
 .about-title{
 text-align: center;
@@ -289,11 +374,11 @@ width: 100%;
     height: 44px;
     border-radius: 50%;
 }
-.social-item_icon{
+/* .social-item_icon{
 width: 20px;
 height: 20px;
 fill: #AFB1B8;
-}
+} */
 .social-link{
     width: 100%;
   height: 100%;
@@ -301,8 +386,13 @@ fill: #AFB1B8;
   justify-content: center;
   align-items: center;
 }
+.social-item_icon{
+    width: 20px;
+    height: 20px;
+    fill: #AFB1B8;
+    }
 .social-item:hover{
-background-color: var(--brand-color)
+background-color: var(--brand-color);
 }
 .social-item:hover.social-item_icon{
     fill: #ffffff;
@@ -329,7 +419,7 @@ background-color: var(--brand-color)
     width: 170px;
     height: 92px;
     border-radius: 4px;
-    bottom: 1px solid #AFB1B8;
+    border: 1px solid #AFB1B8;
 }
 .clients-item__link{
     width: 100%;
@@ -344,7 +434,7 @@ background-color: var(--brand-color)
     fill: var(--brand-color-gray);
 }
 .clients-item:hover{
-    background-color: var(--brand-color-grey);
+    border-color: var(--brand-color);
 }
 .clients-item:hover .clients-item__icon {
     fill: var(--brand-color);
@@ -353,10 +443,150 @@ background-color: var(--brand-color)
 /* --section-footer-- */
 
 .section-footer{
-    background: #2F303A;
+    background-color: #2F303A;
     padding: 60px 0;
 }
 .content-wraper{
     display: flex;
+    justify-content: space-between;
 }
+.footer-adress{
+    margin-top: 20px
+}
+.footer-adress__item{
+   margin-top: 10px;
+}
+.footer-adress__item:first-child{
+margin-top: 0;
+}
+.footer-adress__item:hover a{
+    color: rgba(255, 255, 255, 0.60)
+}
+.footer-adress__item a{
+    color: var(--brand-color-font); 
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.42px;
+}
+юsocial-wraper{
+    width: 206px;
+}
+.footer_social__titel{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+}
+.footer-social__list{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.footer-social__item{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.10);
+}
+.footer-social__item:hover{
+    background-color: var(--brand-color);
+}
+.footer-social__link{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-social__icon{
+    width: 20px;
+    height: 20px;
+    fill: #FFFFFF;
+}
+.footer-form__title{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+}
+.footer-form{
+    margin-top: 20px;
+    display: flex;
+}
+.footer-form__input{
+    width: 358px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    background-color: rgba(33, 150, 243, 0.00);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    letter-spacing: 0.48px;
+    padding: 15px 16px;
+}
+.footer-form__button{
+    border-radius: 4px;
+    background-color: var(--brand-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px; /* 187.5% */
+    letter-spacing: 0.96px;
+    padding: 10px 28px;
+    margin-left: 12px;
+}
+.footer-form__icon{
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes changeScaleRotate{
+    0% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    25% {
+      transform: perspective(400px) rotateY(60deg);
+    }
+  
+    50% {
+      transform: perspective(400px) rotateY(-60deg);
+    }
+    75% {
+      transform: perspective(400px) rotateY(600deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+  }
 
